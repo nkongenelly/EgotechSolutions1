@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//Timeline
+Route::get('/timelineGroups','TimelineController@indexGroup');
+Route::get('/timelineItems','TimelineController@indexItem');
+Route::get('/timelineGroupCreate','TimelineController@createGroup');
+Route::get('/timelineItemCreate','TimelineController@createItem');
+Route::post('/timelineGroupStore','TimelineController@storeGroup');
+Route::post('/timelineItemStore','TimelineController@storeItem');

@@ -206,6 +206,8 @@
       </div>
       <div class="row">
         <!-- single-well start-->
+        <div id="example"></div>
+
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="well-left">
             <div class="single-well">
@@ -1343,6 +1345,7 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
+  <script src="{{asset('js/app.js')}}" ></script>
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
