@@ -21,3 +21,5 @@ Route::get('/timelineGroupCreate','TimelineController@createGroup');
 Route::get('/timelineItemCreate','TimelineController@createItem');
 Route::post('/timelineGroupStore','TimelineController@storeGroup');
 Route::post('/timelineItemStore','TimelineController@storeItem');
+Route::get('/allGroups','TimelineController@allGroups');
+Route::get('/allItems','TimelineController@allItems');

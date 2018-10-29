@@ -1,16 +1,7 @@
-<<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Time Line Groups Index</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-    <div id="container">
+@extends('timelines.timelineMaster')
+@section('content')
     <a href="/timelineGroupCreate" class="btn btn-warning">Add Timeline Group</a>
+    <a href="/timelineItemCreate" class="btn btn-warning">Add Timeline Item</a>
     @if($timelineGroups)
     <table class="table table-condensed table-striped table-hover table-bordered">
         <tr>
@@ -24,14 +15,12 @@
                     <td>{{ $timelineGroup->id}}</td>
                     <td>{{ $timelineGroup->parent}}</td>
                     <td>{{ $timelineGroup->title}}</td>
-                    <td><a href="/productfeaturesedit/{{ $product['id'] }}/{{ $pfeature->id }}" class="btn btn-warning">Edit</a></td>
-                    <td><a href="/productfeaturesdelete/{{ $product['id'] }}/{{ $pfeature->id }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this timeline group?')">Delete</a></td>                   
+                    <td><a href="/timelineGroupCreate" class="btn btn-warning">Edit</a></td>
+                    <td><a href="/timelineGroupCreate" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this timeline group?')">Delete</a></td>                   
                 
                 </tr>
          @endforeach
  
     </table>
     @endif
-    </div>
-</body>
-</html>
+@endsection

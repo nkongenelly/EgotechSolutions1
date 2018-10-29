@@ -53942,7 +53942,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TimeLine__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TimeLines__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap_dist_css_bootstrap_css__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_bootstrap_dist_css_bootstrap_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_bootstrap_dist_css_bootstrap_css__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -53976,7 +53976,7 @@ var Example = function (_Component) {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     { className: "row justify-content-center" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TimeLine__["a" /* default */], null)
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__TimeLines__["a" /* default */], null)
                 )
             );
         }
@@ -75806,7 +75806,11 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_calendar_timeline_lib_Timeline_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_calendar_timeline_lib_Timeline_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -75820,72 +75824,77 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var groups = [{ id: 1, title: "group 1" }, { id: 2, title: "group 2" }];
-
-var items = [{
-    id: 1,
-    group: 1,
-    title: "item 1",
-    start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()(),
-    end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(1, "hour"),
-    canMove: true,
-    canResize: false,
-    canChangeGroup: false,
-    className: "weekend",
-    style: {
-        backgroundColor: "fuchsia"
-    },
-    itemProps: {
-        // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
-        "data-custom-attribute": "Random content",
-        "aria-hidden": true,
-        onDoubleClick: function onDoubleClick() {
-            console.log("You clicked double!");
-        }
-    }
-}, {
-    id: 2,
-    group: 2,
-    title: "item 2",
-    start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(-0.5, "day"),
-    end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(0.5, "day"),
-    canMove: true,
-    canResize: false,
-    canChangeGroup: false,
-    className: "weekend",
-    style: {
-        backgroundColor: "fuchsia"
-    },
-    itemProps: {
-        // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
-        "data-custom-attribute": "Random content",
-        "aria-hidden": true,
-        onDoubleClick: function onDoubleClick() {
-            console.log("You clicked double!");
-        }
-    }
-}, {
-    id: 3,
-    group: 1,
-    title: "item 3",
-    start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(2, "day"),
-    end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(3, "day"),
-    canMove: true,
-    canResize: false,
-    canChangeGroup: false,
-    className: "weekend",
-    style: {
-        backgroundColor: "fuchsia"
-    },
-    itemProps: {
-        // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
-        "data-custom-attribute": "Random content",
-        "aria-hidden": true,
-        onDoubleClick: function onDoubleClick() {
-            console.log("You clicked double!");
-        }
-    }
-}];
+// const group = [{ id: 1, title: "group 1" }, { id: 2, title: "group 2" }];
+// const groups = [];
+// console.log(groups);
+// const item = [
+//     {
+//         id: 1,
+//         group: 1,
+//         title: "item 1",
+//         start_time: moment(),
+//         end_time: moment().add(1, "hour"),
+//         canMove: true,
+//         canResize: false,
+//         canChangeGroup: false,
+//         className: "weekend",
+//         style: {
+//             backgroundColor: "fuchsia"
+//         },
+//         itemProps: {
+//             // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+//             "data-custom-attribute": "Random content",
+//             "aria-hidden": true,
+//             onDoubleClick: () => {
+//                 console.log("You clicked double!");
+//             }
+//         }
+//     },
+//     {
+//         id: 2,
+//         group: 2,
+//         title: "item 2",
+//         start_time: moment().add(-0.5, "day"),
+//         end_time: moment().add(0.5, "day"),
+//         canMove: true,
+//         canResize: false,
+//         canChangeGroup: false,
+//         className: "weekend",
+//         style: {
+//             backgroundColor: "fuchsia"
+//         },
+//         itemProps: {
+//             // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+//             "data-custom-attribute": "Random content",
+//             "aria-hidden": true,
+//             onDoubleClick: () => {
+//                 console.log("You clicked double!");
+//             }
+//         }
+//     },
+//     {
+//         id: 3,
+//         group: 1,
+//         title: "item 3",
+//         start_time: moment().add(2, "day"),
+//         end_time: moment().add(3, "day"),
+//         canMove: true,
+//         canResize: false,
+//         canChangeGroup: false,
+//         className: "weekend",
+//         style: {
+//             backgroundColor: "fuchsia"
+//         },
+//         itemProps: {
+//             // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+//             "data-custom-attribute": "Random content",
+//             "aria-hidden": true,
+//             onDoubleClick: () => {
+//                 console.log("You clicked double!");
+//             }
+//         }
+//     }
+// ];
 
 var Timelines = function (_Component) {
     _inherits(Timelines, _Component);
@@ -75893,7 +75902,15 @@ var Timelines = function (_Component) {
     function Timelines() {
         _classCallCheck(this, Timelines);
 
-        return _possibleConstructorReturn(this, (Timelines.__proto__ || Object.getPrototypeOf(Timelines)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Timelines.__proto__ || Object.getPrototypeOf(Timelines)).call(this));
+
+        _this.state = {
+            groups: [],
+            items: []
+        };
+        console.log(_this.state.groups);
+        console.log(_this.state.items);
+        return _this;
     }
 
     _createClass(Timelines, [{
@@ -75903,12 +75920,71 @@ var Timelines = function (_Component) {
                 "div",
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_calendar_timeline___default.a, {
-                    groups: groups,
-                    items: items,
+                    groups: this.state.groups,
+                    items: this.state.items,
                     defaultTimeStart: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(-12, "day"),
                     defaultTimeEnd: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(12, "day")
                 })
             );
+        }
+    }, {
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            this.fetchData();
+        }
+    }, {
+        key: "fetchData",
+        value: function fetchData() {
+            var _this2 = this;
+
+            Promise.all([fetch("http://127.0.0.1:8000/allGroups"), fetch("http://127.0.0.1:8000/allItems")]).then(function (_ref) {
+                var _ref2 = _slicedToArray(_ref, 2),
+                    res1 = _ref2[0],
+                    res2 = _ref2[1];
+
+                return Promise.all([res1.json(), res2.json()]);
+            }).then(function (_ref3) {
+                var _ref4 = _slicedToArray(_ref3, 2),
+                    data1 = _ref4[0],
+                    data2s = _ref4[1];
+
+                return data2s.map(function (data2) {
+                    console.log(data2);
+
+                    var items = [].concat(_toConsumableArray(_this2.state.items));
+                    var index = 0;
+                    var toPush = {
+                        id: data2.id,
+                        group: data2.group_id,
+                        title: data2.title,
+                        start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(data2.start_time, data2.time_period),
+                        end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(data2.end_time, data2.time_period),
+                        canMove: data2.canMove,
+                        canResize: data2.canResize,
+                        canChangeGroup: data2.canChangeGroup,
+                        className: data2.className,
+                        style: {
+                            backgroundColor: data2.backgroundColor
+                        },
+                        itemProps: {
+                            // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+                            "data-custom-attribute": "Random content",
+                            "aria-hidden": true,
+                            onDoubleClick: function onDoubleClick() {
+                                console.log(data2.githubAccount);
+                            }
+                        }
+                    };
+                    items.push(toPush);
+                    console.log(items);
+                    _this2.setState({ items: items });
+                }), _this2.setState({
+                    groups: data1
+                });
+            }).catch(function (error) {
+                return console.log("parsing failed", error);
+            });
+            // console.log(fetch);
         }
     }]);
 

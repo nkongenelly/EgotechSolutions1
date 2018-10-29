@@ -10,7 +10,7 @@ class Timeline extends Model
     //
     protected $guarded = [];
 
-    public function timelineGroup(){
+    public function timelinegroup(){
         return $this->belongsTo(TimelineGroup::class,'group_id');
     }
 }

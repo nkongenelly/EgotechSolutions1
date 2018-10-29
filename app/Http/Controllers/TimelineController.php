@@ -27,7 +27,8 @@ class TimelineController extends Controller
     public function indexItem()
     {
         $timelines = TimeLine::all();
-        return view('timelines.timelineItem', compac('timelines'));
+        $timelineGroups = TimelineGroup::all();
+        return view('timelines.timelineItem', compact(['timelines','timelineGroups']));
     }
 
     /**
@@ -38,13 +39,13 @@ class TimelineController extends Controller
      */
     public function createGroup(){
         $timelineGroups = TimelineGroup::all();
-        return view('timelines.timelineGroup',compact('timelineGroups'));
+        return view('timelines.timelineGroupCreate',compact('timelineGroups'));
     }
 
     public function createItem(){
         $timelines = TimeLine::all();
         $timelineGroups = TimelineGroup::all();
-        return view('timelines.timelineItem', compac('timelines','timelineGroups'));
+        return view('timelines.timelineItemCreate', compact(['timelines','timelineGroups']));
     }
     public function storeGroup(Request $request)
     {
@@ -52,7 +53,7 @@ class TimelineController extends Controller
             'parent'=>'required',
             'title'=>'required'
         ]);
-        TimelineGroup::create(request('parent','title'));
+        TimelineGroup::create(request(['parent','title']));
         $timelineGroups = TimelineGroup::all();
         return view('timelines.timelineGroup',compact('timelineGroups'));
 
@@ -60,6 +61,7 @@ class TimelineController extends Controller
 
     public function storeItem(Request $request)
     {
+        // dd($request);
         $this->validate(request(),[
             'group_id'=>'required',
             'title'=>'required',
@@ -73,9 +75,11 @@ class TimelineController extends Controller
             'backgroundColor'=>'required',
             'githubAccount'=>'required'
         ]);
-        TimelineGroup::create(request('parent','title'));
-        $timelineGroups = TimelineGroup::all();
-        return view('timelines.timelineGroup',compact('timelineGroups'));
+        // dd('saved');
+        $saved = Timeline::create(request(['group_id','title','start_time','end_time','time_period','canMove','canResize','canChangeGroup','className','backgroundColor','githubAccount']));
+// dd($saved);
+        $timelines = TimeLine::all();
+        return view('timelines.timelineItem', compact('timelines'));
 
     }
 
@@ -85,6 +89,14 @@ class TimelineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function allGroups(){
+        $groups = TimeLineGroup::all();
+        echo json_encode($groups);
+    }
+    public function allItems(){
+        $items = TimeLine::all();
+        echo json_encode($items);
+    }
     public function show($id)
     {
         //

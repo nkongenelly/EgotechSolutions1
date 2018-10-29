@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Timelines from "./TimeLine";
+import Timelines from "./TimeLines";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default class Example extends Component {
@@ -8,8 +8,7 @@ export default class Example extends Component {
         return (
             <div className="container">
                 <div className="row justify-content-center">
-                    
-                    <Timelines/>
+                    <Timelines />
                 </div>
             </div>
         );
