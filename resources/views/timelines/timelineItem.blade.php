@@ -31,7 +31,7 @@
                     <td>{{ $timeline->backgroundColor}}</td>
                     <td>{{ $timeline->githubAccount}}</td>
                     <td><a href="/timelineItemCreate" class="btn btn-warning">Edit</a></td>
-                    <td><a href="/timelineItemCreate" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this timeline item?')">Delete</a></td>                   
+                    <td><a href="/timelineItemDelete/{{ $timeline->id}}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this timeline item?')">Delete</a></td>                   
                 
                 </tr>
          @endforeach

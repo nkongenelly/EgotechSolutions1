@@ -17,12 +17,12 @@ class CreateTimelinesTable extends Migration
             $table->increments('id');
             $table->integer('group_id');
             $table->string('title');
-            $table->double('start_time',8,2);
-            $table->double('end_time',8,2);
+            $table->date('start_time');
+            $table->date('end_time');
             $table->string('time_period');
-            $table->boolean('canMove');
-            $table->boolean('canResize');
-            $table->boolean('canChangeGroup');
+            $table->string('canMove');
+            $table->string('canResize');
+            $table->string('canChangeGroup');
             $table->string('className');
             $table->string('backGroundColor');
             $table->string('githubAccount');

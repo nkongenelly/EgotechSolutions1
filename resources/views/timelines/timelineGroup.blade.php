@@ -16,7 +16,7 @@
                     <td>{{ $timelineGroup->parent}}</td>
                     <td>{{ $timelineGroup->title}}</td>
                     <td><a href="/timelineGroupCreate" class="btn btn-warning">Edit</a></td>
-                    <td><a href="/timelineGroupCreate" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this timeline group?')">Delete</a></td>                   
+                    <td><a href="/timelineGroupDelete/{{ $timelineGroup->id}}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this timeline group?')">Delete</a></td>                   
                 
                 </tr>
          @endforeach

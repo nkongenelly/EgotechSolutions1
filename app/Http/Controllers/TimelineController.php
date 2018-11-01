@@ -131,8 +131,23 @@ class TimelineController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteGroup($id)
     {
-        //
+        TimelineGroup::where('id',$id)
+                        ->delete();
+                        
+        $timelineGroups = TimelineGroup::all();
+        return view('timelines.timelineGroup',compact('timelineGroups'));
+
+    }
+    public function deleteItem($id)
+    {
+        Timeline::where('id',$id)
+                        ->delete();
+        
+        $timelines = TimeLine::all();
+        $timelineGroups = TimelineGroup::all();
+        return view('timelines.timelineItem', compact(['timelines','timelineGroups']));
+
     }
 }

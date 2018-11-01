@@ -30,26 +30,26 @@
         <div class="form-group col-md-6">
             
             <label for="">Start Time</label>
-            <input class="form-control" name="start_time" type="number">
+            <input class="form-control" name="start_time" type="date" placeholder="MM/DD/YYY">
         </div>
         <div class="form-group col-md-6">
             <label for="email">End Time</label>
-            <input class="form-control" name="end_time" type="number">
+            <input class="form-control" name="end_time" type="date" placeholder="MM/DD/YYY">
         </div>
         <div class="form-group col-md-6">
             <label for="phoneNumber">Can Move?</label>
-            <input type="checkbox" name="canMove" value="1" class="form-control">True<br>
-            <input type="checkbox" name="canMove" value="0" checked class="form-control">False
+            <input type="checkbox" name="canMove" value="true" class="form-control">True<br>
+            <input type="checkbox" name="canMove" value="false" checked class="form-control">False
         </div><hr/>
         <div class="form-group col-md-6">
             <label for="">Can Resize?</label>
-            <input type="checkbox" name="canResize" value="1" class="form-control">True<br>
-            <input type="checkbox" name="canResize" value="0" checked class="form-control">False
+            <input type="checkbox" name="canResize" value="true" class="form-control">True<br>
+            <input type="checkbox" name="canResize" value="false" checked class="form-control">False
         </div><hr/>
         <div class="form-group col-md-6">
             <label for="">Can Change Group?</label>
-            <input type="checkbox" name="canChangeGroup" value="1" class="form-control">True<br>
-            <input type="checkbox" name="canChangeGroup" value="0" checked class="form-control">False
+            <input type="checkbox" name="canChangeGroup" value="true" class="form-control">True<br>
+            <input type="checkbox" name="canChangeGroup" value="false" checked class="form-control">False
         </div><hr/>
         <div class="form-group col-md-6">
             <label for="">Class Name</label>

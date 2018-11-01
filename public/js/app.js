@@ -75827,74 +75827,72 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // const group = [{ id: 1, title: "group 1" }, { id: 2, title: "group 2" }];
 // const groups = [];
 // console.log(groups);
-// const item = [
-//     {
-//         id: 1,
-//         group: 1,
-//         title: "item 1",
-//         start_time: moment(),
-//         end_time: moment().add(1, "hour"),
-//         canMove: true,
-//         canResize: false,
-//         canChangeGroup: false,
-//         className: "weekend",
-//         style: {
-//             backgroundColor: "fuchsia"
-//         },
-//         itemProps: {
-//             // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
-//             "data-custom-attribute": "Random content",
-//             "aria-hidden": true,
-//             onDoubleClick: () => {
-//                 console.log("You clicked double!");
-//             }
-//         }
-//     },
-//     {
-//         id: 2,
-//         group: 2,
-//         title: "item 2",
-//         start_time: moment().add(-0.5, "day"),
-//         end_time: moment().add(0.5, "day"),
-//         canMove: true,
-//         canResize: false,
-//         canChangeGroup: false,
-//         className: "weekend",
-//         style: {
-//             backgroundColor: "fuchsia"
-//         },
-//         itemProps: {
-//             // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
-//             "data-custom-attribute": "Random content",
-//             "aria-hidden": true,
-//             onDoubleClick: () => {
-//                 console.log("You clicked double!");
-//             }
-//         }
-//     },
-//     {
-//         id: 3,
-//         group: 1,
-//         title: "item 3",
-//         start_time: moment().add(2, "day"),
-//         end_time: moment().add(3, "day"),
-//         canMove: true,
-//         canResize: false,
-//         canChangeGroup: false,
-//         className: "weekend",
-//         style: {
-//             backgroundColor: "fuchsia"
-//         },
-//         itemProps: {
-//             // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
-//             "data-custom-attribute": "Random content",
-//             "aria-hidden": true,
-//             onDoubleClick: () => {
-//                 console.log("You clicked double!");
-//             }
-//         }
-//     }
-// ];
+var item = [{
+    id: 1,
+    group: 1,
+    title: "item 1",
+    start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()("20111031", "YYYYMMDD").fromNow(),
+    end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()("20111031", "YYYYMMDD").fromNow(),
+    canMove: true,
+    canResize: false,
+    canChangeGroup: false,
+    className: "weekend",
+    style: {
+        backgroundColor: "fuchsia"
+    },
+    itemProps: {
+        // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+        "data-custom-attribute": "Random content",
+        "aria-hidden": true,
+        onDoubleClick: function onDoubleClick() {
+            console.log("You clicked double!");
+        }
+    }
+}, {
+    id: 2,
+    group: 2,
+    title: "item 2",
+    start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(-0.5, "day"),
+    end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(0.5, "day"),
+    canMove: true,
+    canResize: false,
+    canChangeGroup: false,
+    className: "weekend",
+    style: {
+        backgroundColor: "fuchsia"
+    },
+    itemProps: {
+        // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+        "data-custom-attribute": "Random content",
+        "aria-hidden": true,
+        onDoubleClick: function onDoubleClick() {
+            console.log("You clicked double!");
+        }
+    }
+}, {
+    id: 3,
+    group: 1,
+    title: "item 3",
+    start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(2, "day"),
+    end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(3, "day"),
+    canMove: true,
+    canResize: false,
+    canChangeGroup: false,
+    className: "weekend",
+    style: {
+        backgroundColor: "fuchsia"
+    },
+    itemProps: {
+        // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+        "data-custom-attribute": "Random content",
+        "aria-hidden": true,
+        onDoubleClick: function onDoubleClick() {
+            console.log("You clicked double!");
+        }
+    }
+}];
+console.log(__WEBPACK_IMPORTED_MODULE_3_moment___default()(new Date("2018-06-01")));
+console.log(item);
 
 var Timelines = function (_Component) {
     _inherits(Timelines, _Component);
@@ -75920,10 +75918,34 @@ var Timelines = function (_Component) {
                 "div",
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_calendar_timeline___default.a, {
-                    groups: this.state.groups,
-                    items: this.state.items,
-                    defaultTimeStart: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(-12, "day"),
-                    defaultTimeEnd: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(12, "day")
+                    groups: this.state.groups
+                    // items={item}
+                    , items: this.state.items
+                    // items= {this.state.items.map(item)=>(
+                    //     id= 1,
+                    //     group: 1,
+                    //     title: "item 1",
+                    //     start_time: moment("20111031", "YYYYMMDD").fromNow(),
+                    //     end_time: moment("20111031", "YYYYMMDD").fromNow(),
+                    //     canMove: true,
+                    //     canResize: false,
+                    //     canChangeGroup: false,
+                    //     className: "weekend",
+                    //     style: {
+                    //         backgroundColor: "fuchsia"
+                    //     },
+                    //     itemProps: {
+                    //         // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+                    //         "data-custom-attribute": "Random content",
+                    //         "aria-hidden": true,
+                    //         onDoubleClick: () => {
+                    //             console.log("You clicked double!");
+                    //         }
+                    //     }
+                    // )
+                    // }
+                    , defaultTimeStart: __WEBPACK_IMPORTED_MODULE_3_moment___default()(new Date("2018-06-01")),
+                    defaultTimeEnd: __WEBPACK_IMPORTED_MODULE_3_moment___default()(new Date("2018-12-01"))
                 })
             );
         }
@@ -75937,6 +75959,7 @@ var Timelines = function (_Component) {
         value: function fetchData() {
             var _this2 = this;
 
+            console.log("promise");
             Promise.all([fetch("http://127.0.0.1:8000/allGroups"), fetch("http://127.0.0.1:8000/allItems")]).then(function (_ref) {
                 var _ref2 = _slicedToArray(_ref, 2),
                     res1 = _ref2[0],
@@ -75949,7 +75972,8 @@ var Timelines = function (_Component) {
                     data2s = _ref4[1];
 
                 return data2s.map(function (data2) {
-                    console.log(data2);
+                    console.log(data2s);
+                    console.log(data1);
 
                     var items = [].concat(_toConsumableArray(_this2.state.items));
                     var index = 0;
@@ -75957,8 +75981,12 @@ var Timelines = function (_Component) {
                         id: data2.id,
                         group: data2.group_id,
                         title: data2.title,
-                        start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(data2.start_time, data2.time_period),
-                        end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()().add(data2.end_time, data2.time_period),
+                        start_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()(new Date(data2.start_time)),
+                        end_time: __WEBPACK_IMPORTED_MODULE_3_moment___default()(new Date(data2.end_time)),
+                        // end_time: moment(
+                        //     data2.end_time,
+                        //     "YYYY-MM-DD"
+                        // ).fromNow(),
                         canMove: data2.canMove,
                         canResize: data2.canResize,
                         canChangeGroup: data2.canChangeGroup,
@@ -75971,12 +75999,14 @@ var Timelines = function (_Component) {
                             "data-custom-attribute": "Random content",
                             "aria-hidden": true,
                             onDoubleClick: function onDoubleClick() {
-                                console.log(data2.githubAccount);
+                                // console.log(data2.githubAccount);
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", { href: "data2.githubAccount" });
                             }
                         }
                     };
                     items.push(toPush);
-                    console.log(items);
+
+                    console.log(toPush);
                     _this2.setState({ items: items });
                 }), _this2.setState({
                     groups: data1
